@@ -1,76 +1,59 @@
 import React from "react";
+import Day from "../../../../components/Day";
+import Activity from "./components/Activity";
 
 export const RecentActivities = () => {
   return (
     <section>
-      <div className="title-section">
-        <h2>Recent Activities</h2>
-        <button className="button">View a report</button>
-      </div>
+       <div className="title-section">
+          <h2>Recent Activities</h2>
+          <button className="button">View a report</button>
+        </div>
+
       <div>
-        <h6 className="day">Today</h6>
+        <Day day="Today" />
         <div>
-          <div className="activity">
-            <span className="material-symbols-outlined">send </span>
-            <div className="name-description">
-              <h4>To Martin Mitchel</h4>
-              <p className="description">Sent</p>
-            </div>
-            <p className="activity-value">
-              - 3,004.52 <strong>USD</strong>
-            </p>
-          </div>
-
-          <div className="activity">
-            <span className="material-symbols-outlined"> send </span>
-            <div className="name-description">
-              <h4>To Jane Klamberberg</h4>
-              <p className="description">Sent</p>
-            </div>
-            <p className="activity-value">
-              - 1,023.19 <strong>USD</strong>
-            </p>
-          </div>
-
-          <div className="activity">
-            <span className="material-symbols-outlined">
-              {" "}
-              currency_exchange{" "}
-            </span>
-            <div className="name-description">
-              <h4>EUR to USD</h4>
-              <p className="description">Conversion</p>
-            </div>
-            <p className="activity-value">
-              + 1,456.00 <strong>USD</strong>
-            </p>
-          </div>
+          <Activity
+            icon="send"
+            nameDescription="To Martin Mitchel"
+            description="Sent"
+            activityValue=" - 3,004.52"
+            country="USD"
+          />
+          <Activity
+            icon="send"
+            nameDescription="To Jane Klamberberg"
+            description="Sent"
+            activityValue=" - 1,023.19"
+            country="USD"
+          />
+          <Activity
+            icon="currency_exchange"
+            nameDescription="EUR to USD"
+            description="Conversion"
+            activityValue="+ 1,456.00"
+            country="USD"
+          />
         </div>
       </div>
       <div>
-        <h6 className="day">Yesterday</h6>
+        <Day day="Yesterday" />
         <div>
-          <div className="activity">
-            <span className="material-symbols-outlined"> wallet </span>
-            <div className="name-description">
-              <h4>Starbucks</h4>
-              <p className="description">Cafe & Resturants</p>
-            </div>
-            <p className="activity-value">
-              - 5.99 <strong>USD</strong>
-            </p>
-          </div>
+          <Activity
+            icon="wallet"
+            nameDescription="Starbucks"
+            description="Cafe & Resturants"
+            activityValue="- 5.99"
+            country="USD"
+          />
 
-          <div className="activity">
-            <span className="material-symbols-outlined"> savings </span>
-            <div className="name-description">
-              <h4>Deposit to your USD balance</h4>
-              <p className="description">Opened</p>
-            </div>
-            <p className="activity-value">
-              - 4,000.00 <strong>USD</strong>
-            </p>
-          </div>
+          <Activity
+            icon="savings"
+            nameDescription="Deposit to your USD balance"
+            description="Opened"
+            activityValue="- 4,000.00"
+            country="USD"
+          />
         </div>
       </div>
     </section>

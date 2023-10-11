@@ -18,7 +18,6 @@ export const HomeScreen = () => {
         <IntPayments />
         <RecentActivities />
       </main>
-      
     </body>
   );
 };
