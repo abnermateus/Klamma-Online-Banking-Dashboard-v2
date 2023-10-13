@@ -1,12 +1,14 @@
 import React from "react";
+import Sidebar from "./components/Sidebar";
 import HomeScreen from "./screens/HomeScreen";
-import "./App.css";
+import { Container } from "./App.styles";
 
 function App() {
   return (
-    <div className="App">
+    <Container className="App">
+      <Sidebar></Sidebar>
       <HomeScreen></HomeScreen>
-    </div>
+    </Container>
   );
 }
 

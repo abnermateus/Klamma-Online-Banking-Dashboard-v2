@@ -1,14 +1,15 @@
 import React from "react";
-import Day from "../../../../components/Day";
+import Day from "../Day";
 import Activity from "./components/Activity";
+import Button from "../../../../components/Button";
 
 export const RecentActivities = () => {
   return (
     <section>
-       <div className="title-section">
-          <h2>Recent Activities</h2>
-          <button className="button">View a report</button>
-        </div>
+      <div className="title-section">
+        <h2>Recent Activities</h2>
+        <Button text="View a report" variant="contained"></Button>
+      </div>
 
       <div>
         <Day day="Today" />

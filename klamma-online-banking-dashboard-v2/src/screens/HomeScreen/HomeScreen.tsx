@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "./components/Sidebar";
+import { Main } from "./HomeScreen.styles";
 import Header from "./components/Header";
 import Cards from "./components/Cards";
 import IntPayments from "./components/IntPayments";
@@ -8,16 +8,12 @@ import RecentActivities from "./components/RecentActivities";
 
 export const HomeScreen = () => {
   return (
-    <body>
-      <Sidebar />
-
-      <main>
-        <Header />
-        <Cards />
-        <Limits />
-        <IntPayments />
-        <RecentActivities />
-      </main>
-    </body>
+    <Main>
+      <Header />
+      <Cards />
+      <Limits />
+      <IntPayments />
+      <RecentActivities />
+    </Main>
   );
 };
