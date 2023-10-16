@@ -1,19 +1,26 @@
 import React from "react";
+import {
+  LimitContainer,
+  LimitImg,
+  LimitText,
+  LimitTitle,
+} from "./Limit.styles";
 
 interface LimitProps {
+  img: string;
   title: string;
   value: number;
   limit: number;
 }
 
-export const Limit = ({ title, value, limit }: LimitProps) => {
+export const Limit = ({ img, title, value, limit }: LimitProps) => {
   return (
-    <div>
-      <img alt="" src="img/credit-limit-chart.png" />
-      <h4>{title}</h4>
-      <p>
+    <LimitContainer>
+      <LimitImg src={`img/${img}.png`} />
+      <LimitTitle>{title}</LimitTitle>
+      <LimitText>
         <strong> {value}</strong> / {limit} USD
-      </p>
-    </div>
+      </LimitText>
+    </LimitContainer>
   );
 };

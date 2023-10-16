@@ -1,13 +1,10 @@
 import React from "react";
+import { DayTitle } from "./Day.styles";
 
 interface DayProps {
   day: string;
 }
 
 export const Day = ({ day }: DayProps) => {
-  return (
-    <div>
-      <h6>{day}</h6>
-    </div>
-  );
+  return <DayTitle>{day}</DayTitle>;
 };

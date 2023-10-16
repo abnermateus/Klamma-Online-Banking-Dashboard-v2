@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  CardComponent,
+  CardImg,
+  CardCurrentAmount,
+  CardData,
+} from "./Card.styles";
 
 interface CardProps {
   currentAmount: string;
@@ -14,14 +20,14 @@ export const Card = ({
   cardDate,
 }: CardProps) => {
   return (
-    <div className="card">
-      <img alt="" src="img/klamma-icon.png" />
-      <span className="current-amount">
+    <CardComponent>
+      <CardImg src="img/klamma-icon.png" />
+      <CardCurrentAmount>
         {currentAmount}
         <strong>{country}</strong>
-      </span>
-      <span className="card-number">{cardNumber}</span>
-      <span className="card-date">{cardDate}</span>
-    </div>
+      </CardCurrentAmount>
+      <CardData>{cardNumber}</CardData>
+      <CardData>{cardDate}</CardData>
+    </CardComponent>
   );
 };

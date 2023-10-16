@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  ActivityContainer,
+  ActivityDescription,
+  ActivityNameDescription,
+  ActivityValue,
+} from "./Activity.styles";
 
 interface ActivityProps {
   icon: string;
@@ -16,16 +22,16 @@ export const Activity = ({
   country,
 }: ActivityProps) => {
   return (
-    <div className="activity">
+    <ActivityContainer>
       <span className="material-symbols-outlined">{icon}</span>
-      <div className="name-description">
+      <ActivityNameDescription>
         <h4>{nameDescription}</h4>
-        <p className="description">{description}</p>
-      </div>
-      <p className="activity-value">
+        <ActivityDescription>{description}</ActivityDescription>
+      </ActivityNameDescription>
+      <ActivityValue>
         {activityValue}
-        <strong>{country}</strong>
-      </p>
-    </div>
+        <strong> {country}</strong>
+      </ActivityValue>
+    </ActivityContainer>
   );
 };

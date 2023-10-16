@@ -2,14 +2,18 @@ import React from "react";
 import Day from "../Day";
 import Activity from "./components/Activity";
 import Button from "../../../../components/Button";
+import {
+  RecentActivitiesContainer,
+  RecentActivitiesHeader,
+} from "./RecentActivities.styles";
 
 export const RecentActivities = () => {
   return (
-    <section>
-      <div className="title-section">
+    <RecentActivitiesContainer>
+      <RecentActivitiesHeader>
         <h2>Recent Activities</h2>
         <Button text="View a report" variant="contained"></Button>
-      </div>
+      </RecentActivitiesHeader>
 
       <div>
         <Day day="Today" />
@@ -57,6 +61,6 @@ export const RecentActivities = () => {
           />
         </div>
       </div>
-    </section>
+    </RecentActivitiesContainer>
   );
 };

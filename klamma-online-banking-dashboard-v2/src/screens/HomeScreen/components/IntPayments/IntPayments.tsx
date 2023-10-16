@@ -1,20 +1,22 @@
 import React from "react";
 import Payments from "./components/Payments";
 import Day from "../Day";
+import { IntPaymentsContainer, IntPaymentsHeader, IntPaymentsSummary } from "./IntPayments.styles";
 
 export const IntPayments = () => {
   return (
-    <section>
-      <div className="title-section">
+    <IntPaymentsContainer>
+      <IntPaymentsHeader>
         <h2>Int. Payments</h2>
         <Day day="the last 30 days"></Day>
-      </div>
-      <div className="summary">
+      </IntPaymentsHeader>
+
+      <IntPaymentsSummary>
         <Payments status="Awaiting" counter={8} />
         <Payments status="In progress" counter={5} />
         <Payments status="Completed" counter={12} />
         <Payments status="Cancelled" counter={4} />
-      </div>
-    </section>
+      </IntPaymentsSummary>
+    </IntPaymentsContainer>
   );
 };

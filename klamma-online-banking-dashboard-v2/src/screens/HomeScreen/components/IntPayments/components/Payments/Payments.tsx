@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  Counter,
+  PaymentsContainer,
+  PaymentsStatus,
+  Status,
+} from "./Payments.styles";
 
 interface PaymentsProps {
   status: string;
@@ -7,9 +13,11 @@ interface PaymentsProps {
 
 export const Payments = ({ status, counter }: PaymentsProps) => {
   return (
-    <div>
-      <span>{counter}</span>
-      <span>{status}</span>
-    </div>
+    <PaymentsContainer>
+      <PaymentsStatus>
+        <Counter>{counter}</Counter>
+        <Status>{status}</Status>
+      </PaymentsStatus>
+    </PaymentsContainer>
   );
 };

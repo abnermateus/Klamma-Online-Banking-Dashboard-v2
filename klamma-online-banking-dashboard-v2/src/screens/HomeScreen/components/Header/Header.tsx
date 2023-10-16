@@ -6,8 +6,8 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderTitle>Your Cards</HeaderTitle>
-      <Button text="New card" icon="add" variant="contained"></Button>
-      <HeaderImg src="img/bell-notification.png"></HeaderImg>
+      <Button text="New card" endIcon="add" variant="contained" />
+      <HeaderImg src="img/bell-notification.png" />
     </HeaderContainer>
   );
 };
