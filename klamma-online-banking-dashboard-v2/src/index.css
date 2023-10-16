@@ -13,3 +13,9 @@
   --secondary-text-color: #8f8888;
   --mix-blend-mode: multiply;
 }
+
+@media (max-width: 480px) {
+  body {
+    grid-template-columns: 55px 1fr;
+  }
+}
