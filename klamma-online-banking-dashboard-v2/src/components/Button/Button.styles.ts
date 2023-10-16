@@ -6,6 +6,7 @@ type ButtonContainerProps = {
 
 export const ButtonContainer = styled.button<ButtonContainerProps>`
   display: grid;
+  grid-auto-flow: column;
   align-items: center;
   justify-content: center;
   border: none;

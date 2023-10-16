@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
   background-color: var(--secondary-bg-color);
   padding-top: 24px;
 `;
@@ -32,3 +33,4 @@ export const SidebarList = styled.div`
   gap: 8px;
   padding: 8px 16px 16px 16px;
 `;
+
