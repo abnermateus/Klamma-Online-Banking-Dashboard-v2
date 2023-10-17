@@ -7,4 +7,11 @@ export const LimitsContainer = styled.div`
   grid-auto-flow: column;
   padding: 32px;
   margin: 8px 16px 8px 32px;
+
+  @media (max-width: 480px) {
+    padding: 32px;
+    margin: 24px 16px 24px 16px;
+    gap: 16px;
+    border: none;
+  }
 `;

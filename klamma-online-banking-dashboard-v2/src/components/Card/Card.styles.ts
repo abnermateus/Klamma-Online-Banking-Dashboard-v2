@@ -1,13 +1,22 @@
 import styled from "styled-components";
-export const CardCurrentAmount = styled.div`
+
+export const CardCurrentAmount = styled.span`
   font-size: 20px;
   font-weight: 200;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
-export const CardData = styled.div`
+export const CardData = styled.span`
   color: var(--secondary-text-color);
   font-size: 15px;
   font-weight: 200;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const CardComponent = styled.div`
@@ -33,10 +42,19 @@ export const CardComponent = styled.div`
       color: var(--secondary-bg-color);
     }
   }
+
+  @media (max-width: 480px) {
+    width: 260px;
+    height: 180px;
+  }
 `;
 
 export const CardImg = styled.img`
   justify-self: start;
   mix-blend-mode: var(--mix-blend-mode);
   width: 32px;
+
+  @media (max-width: 480px) {
+    width: 24px;
+  }
 `;

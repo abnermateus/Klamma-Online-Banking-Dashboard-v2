@@ -8,4 +8,11 @@ export const Main = styled.main`
   align-items: start;
   overflow-y: auto;
   background-color: var(--primary-bg-color);
+
+  @media (max-width: 480px) {
+    grid-template-areas: "header header" "cards cards" "limits limits" "payments payments" "recent-activities recent-activities";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    overflow-y: auto;
+  }
 `;

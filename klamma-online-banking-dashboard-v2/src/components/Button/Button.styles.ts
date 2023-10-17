@@ -14,6 +14,10 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   border-radius: 3px;
   cursor: pointer;
 
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
+
   ${({ variant }) =>
     variant === "basic" &&
     `
@@ -28,6 +32,17 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
       color: var(--primary-text-color);
       border-radius: 10px;
     }
+
+    @media (max-width: 480px) {
+      grid-template-columns: auto;
+      justify-content: center;
+      padding: 8px;
+
+      label {
+        display: none;
+      }
+    }
+    }
     `};
 
   ${({ variant }) =>
@@ -37,5 +52,11 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
     font-size: 14px;
     font-weight: 600;
     color: var(--secondary-text-color);
+
+    @media (max-width: 480px) {
+      span{
+        font-size: 12px;
+      }
+    }
     `};
 `;

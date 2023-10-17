@@ -14,8 +14,3 @@
   --mix-blend-mode: multiply;
 }
 
-@media (max-width: 480px) {
-  body {
-    grid-template-columns: 55px 1fr;
-  }
-}
