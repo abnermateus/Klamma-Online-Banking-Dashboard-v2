@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Button from "../Button";
 
 export const SidebarContainer = styled.div`
   display: grid;
@@ -49,5 +48,4 @@ export const SidebarList = styled.div`
     justify-content: center;
     gap: 16px;
   }
-  )}
 `;

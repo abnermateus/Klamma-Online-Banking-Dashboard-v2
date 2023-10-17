@@ -14,6 +14,11 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   border-radius: 3px;
   cursor: pointer;
 
+  span,
+  label {
+    cursor: pointer;
+  }
+
   @media (max-width: 480px) {
     font-size: 12px;
   }
@@ -41,7 +46,6 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
       label {
         display: none;
       }
-    }
     }
     `};
 

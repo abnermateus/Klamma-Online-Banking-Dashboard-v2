@@ -21,5 +21,4 @@ export const RecentActivitiesHeader = styled.div`
   @media (max-width: 480px) {
     font-size: 12px;
     }
-  }
 `;

@@ -27,6 +27,7 @@ export const CardComponent = styled.div`
   border: none;
   border-radius: 10px;
   background-color: var(--secondary-bg-color);
+  cursor: pointer;
 
   &:active {
     transform: scale(1.1);

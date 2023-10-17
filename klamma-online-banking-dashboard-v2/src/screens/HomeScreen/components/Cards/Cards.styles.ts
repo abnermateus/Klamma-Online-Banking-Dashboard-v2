@@ -3,9 +3,6 @@ import styled from "styled-components";
 export const CardsContainer = styled.div`
   display: grid;
   grid-area: cards;
-
-  @media (max-width: 480px) {
-
 `;
 
 export const CardsCarousel = styled.div`
