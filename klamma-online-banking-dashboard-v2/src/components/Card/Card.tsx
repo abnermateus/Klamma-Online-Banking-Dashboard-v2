@@ -8,14 +8,14 @@ import {
 
 interface CardProps {
   currentAmount: string;
-  country: string;
+  currency: string;
   cardNumber: string;
   cardDate: string;
 }
 
 export const Card = ({
   currentAmount,
-  country,
+  currency,
   cardNumber,
   cardDate,
 }: CardProps) => {
@@ -24,7 +24,7 @@ export const Card = ({
       <CardImg src="img/klamma-icon.png" />
       <CardCurrentAmount>
         {currentAmount}
-        <strong>{country}</strong>
+        <strong>{currency}</strong>
       </CardCurrentAmount>
       <CardData>{cardNumber}</CardData>
       <CardData>{cardDate}</CardData>
