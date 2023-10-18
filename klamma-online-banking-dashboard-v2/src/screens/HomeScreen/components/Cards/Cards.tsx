@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { CreditCardService } from "../../../../services/creditcard/creditcard.service";
 import Card from "../../../../components/Card";
 import { CardsCarousel, CardsContainer } from "./Cards.styles";
 
 export const Cards = () => {
+  useEffect(() => {
+    const getCards = async () => {
+      const { data } = await CreditCardService.getCreditCards();
+
+      console.log(data);
+    };
+    getCards();
+  }, []);
+
   return (
     <CardsContainer>
       <CardsCarousel>
