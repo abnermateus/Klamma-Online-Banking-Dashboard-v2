@@ -1,4 +1,6 @@
 import React from "react";
+import { CreditCard } from "../../models/credit-card.model";
+
 import {
   CardComponent,
   CardImg,
@@ -7,27 +9,19 @@ import {
 } from "./Card.styles";
 
 interface CardProps {
-  currentAmount: string;
-  currency: string;
-  cardNumber: string;
-  cardDate: string;
+  CreditCard: CreditCard;
 }
 
-export const Card = ({
-  currentAmount,
-  currency,
-  cardNumber,
-  cardDate,
-}: CardProps) => {
+export const Card = ({ CreditCard }: CardProps) => {
   return (
     <CardComponent>
       <CardImg src="img/klamma-icon.png" />
       <CardCurrentAmount>
-        {currentAmount}
-        <strong>{currency}</strong>
+        {CreditCard.currentAmount}
+        <strong> {CreditCard.currency}</strong>
       </CardCurrentAmount>
-      <CardData>{cardNumber}</CardData>
-      <CardData>{cardDate}</CardData>
+      <CardData> {CreditCard.cardNumber}</CardData>
+      <CardData>{CreditCard.cardDate}</CardData>
     </CardComponent>
   );
 };
