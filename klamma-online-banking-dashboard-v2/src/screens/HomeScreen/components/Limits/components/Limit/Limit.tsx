@@ -5,21 +5,19 @@ import {
   LimitText,
   LimitTitle,
 } from "./Limit.styles";
+import { LimitData } from "../../../../../../models/limit.model";
 
 interface LimitProps {
-  img: string;
-  title: string;
-  value: number;
-  limit: number;
+  LimitData: LimitData;
 }
 
-export const Limit = ({ img, title, value, limit }: LimitProps) => {
+export const Limit = ({ LimitData }: LimitProps) => {
   return (
     <LimitContainer>
-      <LimitImg src={`img/${img}.png`} />
-      <LimitTitle>{title}</LimitTitle>
+      <LimitImg src={`img/${LimitData.img}.png`} />
+      <LimitTitle>{LimitData.title}</LimitTitle>
       <LimitText>
-        <strong> {value}</strong> / {limit} USD
+        <strong> {LimitData.value}</strong> / {LimitData.limit} USD
       </LimitText>
     </LimitContainer>
   );

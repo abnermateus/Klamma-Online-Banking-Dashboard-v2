@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Limit from "./components/Limit";
 import { LimitsContainer } from "./Limits.styles";
+import { LimitData } from "../../../../models/limit.model";
+import { LimitDataService } from "../../../../services/limitdata/limitdata.service";
 
 export const Limits = () => {
+  const [limits, setLimits] = useState<LimitData[]>([]);
+
+  useEffect(() => {
+    getLimit();
+  }, []);
+
+  const getLimit = () => {
+    LimitDataService.getLimitData()
+      .then((limitsList) => setLimits(limitsList))
+      .catch(() => alert("Erro ao buscar os limites!"));
+  };
+
   return (
     <LimitsContainer>
-      <Limit
-        img="credit-limit-chart"
-        title="Credit limit"
-        value={1500}
-        limit={2000}
-      />
-      <Limit
-        img="online-limit-chart"
-        title="Online limit"
-        value={1324}
-        limit={1500}
-      />
+      {limits.map((limit) => (
+        <Limit key={limit.title} LimitData={limit} />
+      ))}
     </LimitsContainer>
   );
 };
