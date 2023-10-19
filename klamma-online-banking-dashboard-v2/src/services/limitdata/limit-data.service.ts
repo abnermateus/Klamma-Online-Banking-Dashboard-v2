@@ -1,5 +1,5 @@
-import { LimitDataApi } from "./limitdata.api";
-import { LimitData } from "../../models/limit.model";
+import { LimitDataApi } from "./limit-data.api";
+import { LimitData } from "../../models/limit-data.model";
 
 export class LimitDataService {
   static async getLimitData() {

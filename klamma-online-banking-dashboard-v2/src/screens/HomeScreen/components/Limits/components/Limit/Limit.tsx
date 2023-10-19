@@ -5,7 +5,7 @@ import {
   LimitText,
   LimitTitle,
 } from "./Limit.styles";
-import { LimitData } from "../../../../../../models/limit.model";
+import { LimitData } from "../../../../../../models/limit-data.model";
 
 interface LimitProps {
   LimitData: LimitData;
