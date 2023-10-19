@@ -1,4 +1,4 @@
-import { CreditCardApi } from "./creditcard.api";
+import { CreditCardApi } from "./credit-card.api";
 import { CreditCard } from "../../models/credit-card.model";
 
 export class CreditCardService {

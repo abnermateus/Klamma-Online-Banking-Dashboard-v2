@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Card from "../../../../components/Card";
 import { CardsCarousel, CardsContainer } from "./Cards.styles";
 import { CreditCard } from "../../../../models/credit-card.model";
-import { CreditCardService } from "../../../../services/creditcard/creditcard.service";
+import { CreditCardService } from "../../../../services/creditcard/credit-card.service";
 
 export const Cards = () => {
   const [cards, setCards] = useState<CreditCard[]>([]);
