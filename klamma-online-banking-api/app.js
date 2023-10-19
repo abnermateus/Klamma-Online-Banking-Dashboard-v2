@@ -35,7 +35,23 @@ app.get("/cards", (req, res) => {
   ]);
 });
 
-app.get("/limits", (req, res) => {});
+app.get("/limits", (req, res) => {
+  res.json([
+    {
+      img: "credit-limit-chart",
+      title: "Credit limit",
+      value: 1500,
+      limit: 2000,
+    },
+
+    {
+      img: "online-limit-chart",
+      title: "Online limit",
+      value: 1324,
+      limit: 1500,
+    },
+  ]);
+});
 
 app.get("/int-payments", (req, res) => {});
 
