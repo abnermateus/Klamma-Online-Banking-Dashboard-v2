@@ -6,6 +6,10 @@ app.use(express.json());
 const corsOptions = { origin: "http://localhost:3000" };
 app.use(cors(corsOptions));
 
+app.get("/sidebar", (req, res) => {});
+
+app.get("/header", (req, res) => {});
+
 app.get("/cards", (req, res) => {
   res.json([
     {
@@ -30,6 +34,12 @@ app.get("/cards", (req, res) => {
     },
   ]);
 });
+
+app.get("/limits", (req, res) => {});
+
+app.get("/int-payments", (req, res) => {});
+
+app.get("/recent-activities", (req, res) => {});
 
 app.listen(3001, () => {
   console.log(`Servidor em execução na porta ${3001}`);
