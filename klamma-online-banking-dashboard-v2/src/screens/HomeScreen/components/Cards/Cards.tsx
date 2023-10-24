@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Card from "../../../../components/Card";
 import { CardsCarousel, CardsContainer } from "./Cards.styles";
-import { CreditCard } from "../../../../models/credit-card.model";
+import { CreditCardData } from "../../../../models/credit-card.model";
 import { CreditCardService } from "../../../../services/creditcard/credit-card.service";
 
 export const Cards = () => {
-  const [cards, setCards] = useState<CreditCard[]>([]);
+  const [cards, setCards] = useState<CreditCardData[]>([]);
 
   useEffect(() => {
     getCards();
@@ -21,7 +21,7 @@ export const Cards = () => {
     <CardsContainer>
       <CardsCarousel>
         {cards.map((card) => (
-          <Card key={card.cardNumber} CreditCard={card} />
+          <Card key={card.number} CreditCardData={card} />
         ))}
       </CardsCarousel>
     </CardsContainer>

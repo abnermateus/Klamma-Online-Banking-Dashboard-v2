@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Payments from "./components/Payments";
+import { IntPaymentsData } from "../../../../models/int-payments.model";
+import { IntPaymentsService } from "../../../../services/intpayments/int-payments.service";
 import Day from "../Day";
-import { IntPaymentsContainer, IntPaymentsHeader, IntPaymentsSummary } from "./IntPayments.styles";
+import {
+  IntPaymentsContainer,
+  IntPaymentsHeader,
+  IntPaymentsSummary,
+} from "./IntPayments.styles";
 
 export const IntPayments = () => {
+  const [intPayments, setIntPayments] = useState<IntPaymentsData[]>([]);
+
+  useEffect(() => {
+    getPayment();
+  }, []);
+
+  const getPayment = () => {
+    IntPaymentsService.getPayment()
+      .then((intPaymentsList) => setIntPayments(intPaymentsList))
+      .catch(() => alert("Erro ao buscar os pagamentos!"));
+  };
+
   return (
     <IntPaymentsContainer>
       <IntPaymentsHeader>
@@ -12,10 +30,9 @@ export const IntPayments = () => {
       </IntPaymentsHeader>
 
       <IntPaymentsSummary>
-        <Payments status="Awaiting" counter={8} />
-        <Payments status="In progress" counter={5} />
-        <Payments status="Completed" counter={12} />
-        <Payments status="Cancelled" counter={4} />
+        {intPayments.map((intPayment) => (
+          <Payments key={intPayment.status} IntPaymentsData={intPayment} />
+        ))}
       </IntPaymentsSummary>
     </IntPaymentsContainer>
   );

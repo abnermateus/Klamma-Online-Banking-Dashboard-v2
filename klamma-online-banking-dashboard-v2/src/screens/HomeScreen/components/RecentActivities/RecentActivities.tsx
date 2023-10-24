@@ -1,13 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Day from "../Day";
 import Activity from "./components/Activity";
 import Button from "../../../../components/Button";
+import { RecentActivitiesService } from "../../../../services/recentactivities/recent-activities.service";
 import {
   RecentActivitiesContainer,
   RecentActivitiesHeader,
 } from "./RecentActivities.styles";
+import { RecentActivitiesData } from "../../../../models/recent-activities.model";
 
 export const RecentActivities = () => {
+  const [recentActivities, setRecentActivities] = useState({
+    todayActivities: [] as RecentActivitiesData[],
+    yesterdayActivities: [] as RecentActivitiesData[],
+  });
+
+  useEffect(() => {
+    getRecentActivities();
+  }, []);
+
+  const getRecentActivities = () => {
+    RecentActivitiesService.getRecentActivities()
+      .then((recentActivitiesList) => setRecentActivities(recentActivitiesList))
+      .catch(() => alert("Erro ao buscar as atividades recentes!"));
+  };
+
   return (
     <RecentActivitiesContainer>
       <RecentActivitiesHeader>
@@ -16,50 +33,27 @@ export const RecentActivities = () => {
       </RecentActivitiesHeader>
 
       <div>
-        <Day day="Today" />
         <div>
-          <Activity
-            icon="send"
-            nameDescription="To Martin Mitchel"
-            description="Sent"
-            activityValue=" - 3,004.52"
-            country="USD"
-          />
-          <Activity
-            icon="send"
-            nameDescription="To Jane Klamberberg"
-            description="Sent"
-            activityValue=" - 1,023.19"
-            country="USD"
-          />
-          <Activity
-            icon="currency_exchange"
-            nameDescription="EUR to USD"
-            description="Conversion"
-            activityValue="+ 1,456.00"
-            country="USD"
-          />
+          <Day day="Today" />
         </div>
+        {recentActivities.todayActivities.map((recentActivity) => (
+          <Activity
+            key={recentActivity.nameDescription}
+            RecentActivitiesData={recentActivity}
+          />
+        ))}
       </div>
-      <div>
-        <Day day="Yesterday" />
-        <div>
-          <Activity
-            icon="wallet"
-            nameDescription="Starbucks"
-            description="Cafe & Resturants"
-            activityValue="- 5.99"
-            country="USD"
-          />
 
-          <Activity
-            icon="savings"
-            nameDescription="Deposit to your USD balance"
-            description="Opened"
-            activityValue="- 4,000.00"
-            country="USD"
-          />
+      <div>
+        <div>
+          <Day day="Yesterday" />
         </div>
+        {recentActivities.yesterdayActivities.map((recentActivity) => (
+          <Activity
+            key={recentActivity.nameDescription}
+            RecentActivitiesData={recentActivity}
+          />
+        ))}
       </div>
     </RecentActivitiesContainer>
   );

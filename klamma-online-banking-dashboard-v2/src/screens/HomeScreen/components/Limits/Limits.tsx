@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Limit from "./components/Limit";
 import { LimitsContainer } from "./Limits.styles";
-import { LimitData } from "../../../../models/limit-data.model";
-import { LimitDataService } from "../../../../services/limitdata/limit-data.service";
+import { LimitData } from "../../../../models/limit.model";
+import { LimitDataService } from "../../../../services/limit/limit-data.service";
 
 export const Limits = () => {
   const [limits, setLimits] = useState<LimitData[]>([]);

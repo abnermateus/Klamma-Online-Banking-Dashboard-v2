@@ -1,4 +1,4 @@
-import React from "react";
+import { IntPaymentsData } from "../../../../../../models/int-payments.model";
 import {
   Counter,
   PaymentsContainer,
@@ -7,16 +7,15 @@ import {
 } from "./Payments.styles";
 
 interface PaymentsProps {
-  status: string;
-  counter: number;
+  IntPaymentsData: IntPaymentsData;
 }
 
-export const Payments = ({ status, counter }: PaymentsProps) => {
+export const Payments = ({ IntPaymentsData }: PaymentsProps) => {
   return (
     <PaymentsContainer>
       <PaymentsStatus>
-        <Counter>{counter}</Counter>
-        <Status>{status}</Status>
+        <Counter>{IntPaymentsData.counter}</Counter>
+        <Status>{IntPaymentsData.status}</Status>
       </PaymentsStatus>
     </PaymentsContainer>
   );
