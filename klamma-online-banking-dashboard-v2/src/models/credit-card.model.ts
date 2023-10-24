@@ -1,16 +1,16 @@
 import { CreditCardResponse } from "./responses/credit-card.response";
 import moment from "moment";
 
-export class CreditCard {
+export class CreditCardData {
   currentAmount: string;
   currency: string;
-  cardNumber: string;
-  cardDate: string;
+  number: string;
+  date: string;
 
   constructor(creditCardResponse: CreditCardResponse) {
     this.currentAmount = creditCardResponse.currentAmount.toFixed(2);
     this.currency = creditCardResponse.currency;
-    this.cardNumber = creditCardResponse.cardNumber;
-    this.cardDate = moment(creditCardResponse.cardDate).format("MM / YY");
+    this.number = creditCardResponse.number;
+    this.date = moment(creditCardResponse.date).format("MM / YY");
   }
 }
