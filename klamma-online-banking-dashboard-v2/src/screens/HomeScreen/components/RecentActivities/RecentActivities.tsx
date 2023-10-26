@@ -38,8 +38,8 @@ export const RecentActivities = () => {
         </div>
         {recentActivities.todayActivities.map((recentActivity) => (
           <Activity
-            key={recentActivity.nameDescription}
-            RecentActivitiesData={recentActivity}
+            key={recentActivity.title}
+            recentActivitiesData={recentActivity}
           />
         ))}
       </div>
@@ -50,8 +50,8 @@ export const RecentActivities = () => {
         </div>
         {recentActivities.yesterdayActivities.map((recentActivity) => (
           <Activity
-            key={recentActivity.nameDescription}
-            RecentActivitiesData={recentActivity}
+            key={recentActivity.title}
+            recentActivitiesData={recentActivity}
           />
         ))}
       </div>

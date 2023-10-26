@@ -31,7 +31,7 @@ export const IntPayments = () => {
 
       <IntPaymentsSummary>
         {intPayments.map((intPayment) => (
-          <Payments key={intPayment.status} IntPaymentsData={intPayment} />
+          <Payments key={intPayment.status} intPaymentsData={intPayment} />
         ))}
       </IntPaymentsSummary>
     </IntPaymentsContainer>

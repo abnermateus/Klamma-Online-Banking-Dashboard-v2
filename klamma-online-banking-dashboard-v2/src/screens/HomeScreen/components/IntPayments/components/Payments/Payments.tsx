@@ -7,15 +7,15 @@ import {
 } from "./Payments.styles";
 
 interface PaymentsProps {
-  IntPaymentsData: IntPaymentsData;
+  intPaymentsData: IntPaymentsData;
 }
 
-export const Payments = ({ IntPaymentsData }: PaymentsProps) => {
+export const Payments = ({ intPaymentsData }: PaymentsProps) => {
   return (
     <PaymentsContainer>
       <PaymentsStatus>
-        <Counter>{IntPaymentsData.counter}</Counter>
-        <Status>{IntPaymentsData.status}</Status>
+        <Counter>{intPaymentsData.counter}</Counter>
+        <Status>{intPaymentsData.status}</Status>
       </PaymentsStatus>
     </PaymentsContainer>
   );

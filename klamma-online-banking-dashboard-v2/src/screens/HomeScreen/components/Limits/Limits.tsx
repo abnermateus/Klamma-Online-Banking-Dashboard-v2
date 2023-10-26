@@ -20,7 +20,7 @@ export const Limits = () => {
   return (
     <LimitsContainer>
       {limits.map((limit) => (
-        <Limit key={limit.title} LimitData={limit} />
+        <Limit key={limit.title} limitData={limit} />
       ))}
     </LimitsContainer>
   );

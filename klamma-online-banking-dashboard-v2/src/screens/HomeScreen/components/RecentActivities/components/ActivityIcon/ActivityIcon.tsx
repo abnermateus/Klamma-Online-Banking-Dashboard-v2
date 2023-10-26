@@ -8,7 +8,7 @@ export class ActivityIcon {
   }
 
   getIconName = () => {
-    switch (this.recentActivitiesData.description) {
+    switch (this.recentActivitiesData.type) {
       case "Sent":
         return "send";
       case "Conversion":

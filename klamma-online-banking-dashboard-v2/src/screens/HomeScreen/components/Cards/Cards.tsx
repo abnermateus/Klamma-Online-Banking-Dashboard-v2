@@ -14,14 +14,14 @@ export const Cards = () => {
   const getCards = () => {
     CreditCardService.getCreditCards()
       .then((cardsList) => setCards(cardsList))
-      .catch(() => alert("Erro ao buscar cartão!"));
+      .catch(() => alert("Erro ao buscar os cartões!"));
   };
 
   return (
     <CardsContainer>
       <CardsCarousel>
         {cards.map((card) => (
-          <Card key={card.number} CreditCardData={card} />
+          <Card key={card.number} creditCardData={card} />
         ))}
       </CardsCarousel>
     </CardsContainer>

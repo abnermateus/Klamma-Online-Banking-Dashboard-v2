@@ -9,25 +9,23 @@ import {
 import ActivityIcon from "../ActivityIcon";
 
 interface ActivityProps {
-  RecentActivitiesData: RecentActivitiesData;
+  recentActivitiesData: RecentActivitiesData;
 }
 
-export const Activity = ({ RecentActivitiesData }: ActivityProps) => {
-  const activityIcon = new ActivityIcon(RecentActivitiesData); 
-  const iconName = activityIcon.getIconName(); 
+export const Activity = ({ recentActivitiesData }: ActivityProps) => {
+  const activityIcon = new ActivityIcon(recentActivitiesData);
+  const iconName = activityIcon.getIconName();
 
   return (
     <ActivityContainer>
       <span className="material-symbols-outlined">{iconName}</span>
       <ActivityNameDescription>
-        <h4>{RecentActivitiesData.nameDescription}</h4>
-        <ActivityDescription>
-          {RecentActivitiesData.description}
-        </ActivityDescription>
+        <h4>{recentActivitiesData.title}</h4>
+        <ActivityDescription>{recentActivitiesData.type}</ActivityDescription>
       </ActivityNameDescription>
       <ActivityValue>
-        {RecentActivitiesData.value}
-        <strong> {RecentActivitiesData.currency}</strong>
+        {recentActivitiesData.value}
+        <strong> {recentActivitiesData.currency}</strong>
       </ActivityValue>
     </ActivityContainer>
   );

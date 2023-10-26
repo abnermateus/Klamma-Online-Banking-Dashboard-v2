@@ -8,19 +8,19 @@ import {
 } from "./Card.styles";
 
 interface CardProps {
-  CreditCardData: CreditCardData;
+  creditCardData: CreditCardData;
 }
 
-export const Card = ({ CreditCardData }: CardProps) => {
+export const Card = ({ creditCardData }: CardProps) => {
   return (
     <CardComponent>
       <CardImg src="img/klamma-icon.png" />
       <CardCurrentAmount>
-        {CreditCardData.currentAmount}
-        <strong> {CreditCardData.currency}</strong>
+        {creditCardData.currentAmount}
+        <strong> {creditCardData.currency}</strong>
       </CardCurrentAmount>
-      <CardData> {CreditCardData.number}</CardData>
-      <CardData>{CreditCardData.date}</CardData>
+      <CardData> {creditCardData.number}</CardData>
+      <CardData>{creditCardData.date}</CardData>
     </CardComponent>
   );
 };

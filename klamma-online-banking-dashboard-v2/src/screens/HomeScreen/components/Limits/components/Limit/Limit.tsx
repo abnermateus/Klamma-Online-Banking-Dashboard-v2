@@ -8,16 +8,16 @@ import {
 import { LimitData } from "../../../../../../models/limit.model";
 
 interface LimitProps {
-  LimitData: LimitData;
+  limitData: LimitData;
 }
 
-export const Limit = ({ LimitData }: LimitProps) => {
+export const Limit = ({ limitData }: LimitProps) => {
   return (
     <LimitContainer>
-      <LimitImg src={`img/${LimitData.img}.png`} />
-      <LimitTitle>{LimitData.title}</LimitTitle>
+      <LimitImg src={`img/${limitData.img}.png`} />
+      <LimitTitle>{limitData.title}</LimitTitle>
       <LimitText>
-        <strong> {LimitData.value}</strong> / {LimitData.limit} USD
+        <strong> {limitData.value}</strong> / {limitData.limit} USD
       </LimitText>
     </LimitContainer>
   );
