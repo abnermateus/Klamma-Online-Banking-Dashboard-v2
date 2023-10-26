@@ -74,7 +74,7 @@ app.get("/int-payments", (req, res) => {
 });
 
 app.get("/recent-activities", (req, res) => {
-  const TransactionDescription = {
+  const TransactionType = {
     Sent: "Sent",
     Conversion: "Conversion",
     CafeAndRestaurants: "Cafe & Restaurants",
@@ -83,38 +83,38 @@ app.get("/recent-activities", (req, res) => {
 
   res.json([
     {
-      date: new Date(2023, 9, 24),
-      nameDescription: "To Martin Mitchel",
-      description: TransactionDescription.Sent,
-      value: - 3004.52,
+      date: new Date(2023, 9, 26),
+      title: "To Martin Mitchel",
+      type: TransactionType.Sent,
+      value: -3004.52,
       currency: "USD",
     },
     {
-      date: new Date(2023, 9, 24),
-      nameDescription: "To Jane Klamberberg",
-      description: TransactionDescription.Sent,
-      value: - 1023.19,
+      date: new Date(2023, 9, 26),
+      title: "To Jane Klamberberg",
+      type: TransactionType.Sent,
+      value: -1023.19,
       currency: "USD",
     },
     {
-      date: new Date(2023, 9, 24),
-      nameDescription: "EUR to USD",
-      description: TransactionDescription.Conversion,
-      value: + 1456.00,
+      date: new Date(2023, 9, 26),
+      title: "EUR to USD",
+      type: TransactionType.Conversion,
+      value: +1456.0,
       currency: "USD",
     },
     {
-      date: new Date(2023, 9, 23),
-      nameDescription: "Starbucks",
-      description: TransactionDescription.CafeAndRestaurants,
-      value: - 5.99,
+      date: new Date(2023, 9, 25),
+      title: "Starbucks",
+      type: TransactionType.CafeAndRestaurants,
+      value: -5.99,
       currency: "USD",
     },
     {
-      date: new Date(2023, 9, 23),
-      nameDescription: "Deposit to your USD balance",
-      description: TransactionDescription.Opened,
-      value: - 4000.00,
+      date: new Date(2023, 9, 25),
+      title: "Deposit to your USD balance",
+      type: TransactionType.Opened,
+      value: -4000.0,
       currency: "USD",
     },
   ]);
