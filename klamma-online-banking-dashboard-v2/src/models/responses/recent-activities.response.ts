@@ -1,7 +1,7 @@
 export interface RecentActivitiesResponse {
   date: string;
-  nameDescription: string;
-  description: string;
+  title: string;
+  type: string;
   value: number;
   currency: string;
 }
