@@ -1,6 +1,6 @@
 import { RecentActivitiesApi } from "./recent-activities.api";
 import { RecentActivitiesData } from "../../models/recent-activities.model";
-import moment from "moment";
+import { DateUtils } from "../../utils/date.utils";
 
 export class RecentActivitiesService {
   static async getRecentActivities() {
@@ -11,18 +11,15 @@ export class RecentActivitiesService {
     );
 
     const todayActivities = activities.filter((activity) => {
-      return moment(activity.date, "DD/MM/YYYY").isSame(moment(), "day");
+      return DateUtils.isToday(activity.date);
     });
 
     const yesterdayActivities = activities.filter((activity) => {
-      return moment(activity.date, "DD/MM/YYYY").isSame(
-        moment().subtract(1, "day"),
-        "day"
-      );
+      return DateUtils.isYesterday(activity.date);
     });
 
     return {
-      todayActivities,
+      todayActivities,  
       yesterdayActivities,
     };
   }
