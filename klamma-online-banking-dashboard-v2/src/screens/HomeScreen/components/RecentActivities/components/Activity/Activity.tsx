@@ -13,12 +13,9 @@ interface ActivityProps {
 }
 
 export const Activity = ({ recentActivitiesData }: ActivityProps) => {
-  const activityIcon = new ActivityIcon(recentActivitiesData);
-  const iconName = activityIcon.getIconName();
-
   return (
     <ActivityContainer>
-      <span className="material-symbols-outlined">{iconName}</span>
+      <ActivityIcon type={recentActivitiesData.type} />
       <ActivityNameDescription>
         <h4>{recentActivitiesData.title}</h4>
         <ActivityDescription>{recentActivitiesData.type}</ActivityDescription>

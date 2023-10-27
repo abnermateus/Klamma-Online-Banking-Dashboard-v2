@@ -1,22 +1,18 @@
-import { RecentActivitiesData } from "../../../../../../models/recent-activities.model";
+type ActivityIconProps = {
+  type: string;
+};
 
-export class ActivityIcon {
-  recentActivitiesData: RecentActivitiesData;
-
-  constructor(recentActivitiesData: RecentActivitiesData) {
-    this.recentActivitiesData = recentActivitiesData;
-  }
-
-  getIconName = () => {
-    switch (this.recentActivitiesData.type) {
-      case "Sent":
-        return "send";
-      case "Conversion":
-        return "currency_exchange";
-      case "Cafe & Restaurants":
-        return "wallet";
-      case "Opened":
-        return "savings";
-    }
+export const ActivityIcon = ({ type }: ActivityIconProps) => {
+  const activityIconByType: { [key: string]: string } = {
+    Sent: "send",
+    Conversion: "currency_exchange",
+    "Cafe & Restaurants": "wallet",
+    Opened: "savings",
   };
-}
+
+  return (
+    <span className="material-symbols-outlined">
+      {activityIconByType[type]}
+    </span>
+  );
+};
