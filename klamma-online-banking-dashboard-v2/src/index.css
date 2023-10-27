@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kanit";
+}
+
+:root {
+  --primary-bg-color: #f8f8f8;
+  --secondary-bg-color: #ffffff;
+  --button-bg-color: #dadae6;
+  --primary-text-color: #091c7e;
+  --secondary-text-color: #8f8888;
+  --mix-blend-mode: multiply;
+}
+
